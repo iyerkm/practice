@@ -1,4 +1,4 @@
-import com.sun.javaws.exceptions.InvalidArgumentException;
+
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class playground {
 
-    public static void main(String[] args) throws InvalidArgumentException{
+    public static void main(String[] args) throws Exception{
         System.out.println("binarySearch(new int[]{1,2,3,4,5,6,7,8,9,10}, 2) = " +
                 binarySearch(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 9));
         System.out.println("Arrays.toString(rotateArray(new int[] {1,2,3,4,5}, 3)) = " +
@@ -98,12 +98,12 @@ public class playground {
         }
     }
 
-    private static <T> T[] getFollowingElements(T[] elements, T e) throws InvalidArgumentException{
+    private static <T> T[] getFollowingElements(T[] elements, T e) throws Exception{
         if (null == elements || elements.length == 0) {
             return null;
         }
         if (null == e) {
-            throw new InvalidArgumentException(new String[]{"Invalid input"});
+            throw new Exception("Invalid input");
         }
         int index = 0;
         for (T t : elements) {
